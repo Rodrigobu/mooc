@@ -3,7 +3,7 @@ from .models import Course
 
 def index(request):
 
-    courses = Course.object.all()
+    courses = Course.objects.all()
     template_name = 'courses/index.html'
     context = {
         'courses':courses
