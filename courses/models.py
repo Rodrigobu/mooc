@@ -26,6 +26,9 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+    @models.permalink
+    def get_aboslute_url(self):
+        return ('courses:details', (), {'slug':self.slug})
 
     class Meta:
         verbose_name = 'Curso'
