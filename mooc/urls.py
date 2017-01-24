@@ -25,3 +25,6 @@ urlpatterns = [
     url(r'^cursos/', include('courses.urls', namespace='courses')),
     url(r'^',include('core.urls', namespace='core')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
