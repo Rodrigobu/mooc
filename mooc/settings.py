@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
-    'courses',
+    'mooc.core',
+    'mooc.courses',
+    'mooc.accounts'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'mooc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/'],
+        'DIRS': ['mooc/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +124,13 @@ STATIC_URL = 'mooc/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mooc', 'media')
 MEDIA_URL = '/media/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'Rodrigo <rodferaraujo@gmail.com>'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'rodferaraujo@gmail.com'
+EMAIL_HOST_PASSWORD = 'Shay07102011'
+EMAIL_PORT = 587
+
+CONTACT_EMAIL = 'contato@mooc.com'

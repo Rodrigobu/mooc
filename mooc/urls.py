@@ -22,8 +22,8 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^cursos/', include('courses.urls', namespace='courses')),
-    url(r'^',include('core.urls', namespace='core')),
+    url(r'^cursos/', include('mooc.courses.urls', namespace='courses')),
+    url(r'^',include('mooc.core.urls', namespace='core')),
 ]
 
 if settings.DEBUG:
